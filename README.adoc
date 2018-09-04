@@ -1,0 +1,3 @@
+== Spring Boot & JUnit 5.3 project template
+
+use 'junit-jupiter.version' and 'junit-platform.version' properties to overwrite Spring Boot managed dependencies
