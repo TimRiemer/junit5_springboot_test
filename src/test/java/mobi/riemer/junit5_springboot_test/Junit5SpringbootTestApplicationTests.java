@@ -11,7 +11,5 @@ class Junit5SpringbootTestApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println("TEST");
     }
-
 }
