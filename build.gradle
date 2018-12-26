@@ -1,6 +1,7 @@
 buildscript {
     ext {
-        springBootVersion = '2.1.0.RELEASE'
+        springBootVersion = '2.1.1.RELEASE'
+        junitJupiterVersion = '5.4.0-M1'
     }
     repositories {
         mavenCentral()
@@ -10,7 +11,7 @@ buildscript {
     }
 }
 
-ext['junit-jupiter.version'] = '5.3.1'
+ext['junit-jupiter.version'] = '5.4.0-M1'
 
 apply plugin: 'java'
 apply plugin: 'idea'
@@ -29,11 +30,9 @@ test {
     useJUnitPlatform()
 }
 
-
 dependencies {
     compile('org.springframework.boot:spring-boot-starter')
-    testCompile('org.junit.jupiter:junit-jupiter-api')
-    testRuntime('org.junit.jupiter:junit-jupiter-engine')
+    testCompile "org.junit.jupiter:junit-jupiter:${junitJupiterVersion}"
     testCompile('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'junit', module: 'junit'
     }
