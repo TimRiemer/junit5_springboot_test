@@ -1,7 +1,6 @@
 buildscript {
     ext {
         springBootVersion = '2.1.1.RELEASE'
-        junitJupiterVersion = '5.4.0-M1'
     }
     repositories {
         mavenCentral()
@@ -32,7 +31,8 @@ test {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter')
-    testCompile "org.junit.jupiter:junit-jupiter:${junitJupiterVersion}"
+    // will bring in junit-jupiter-api and -params as testCompile and -engine as testRuntime dependencies
+    testCompile "org.junit.jupiter:junit-jupiter"
     testCompile('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'junit', module: 'junit'
     }
